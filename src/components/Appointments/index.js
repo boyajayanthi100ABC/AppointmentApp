@@ -11,7 +11,7 @@ class Appointments extends Component {
     appointmentsList: [],
     titleInput: '',
     dateInput: '',
-    isFilterActive: False,
+    isFilterActive: false,
   }
 
   toggleIsStarted = id => {
@@ -37,7 +37,7 @@ class Appointments extends Component {
     const {titleInput, dateInput} = this.state
 
     const formattedDate = dateInput
-      ? format(new date(dateInput), 'dd MMMM yyyy, EEEE')
+      ? format(new Date(dateInput), 'dd MMMM yyyy, EEEE')
       : ''
 
     const newAppointment = {
@@ -79,7 +79,7 @@ class Appointments extends Component {
           <div className="row-container">
             <div className="add-appointment-container">
               <form className="form" onSubmit={this.onAddAppointment}>
-                <h1 class="add-appointment-heading"> Add Appointment </h1>
+                <h1 className="add-appointment-heading"> Add Appointment </h1>
                 <label htmlFor="title" className="label">
                   {' '}
                   Title{' '}
@@ -92,7 +92,7 @@ class Appointments extends Component {
                   className="input"
                   onChange={this.onChangeTitleInput}
                 />
-                <label> DATE </label>
+                <label htmlFor="date"> DATE </label>
                 <input
                   type="date"
                   id="date"
@@ -119,7 +119,7 @@ class Appointments extends Component {
                 className={`filter-style ${filterClassName}`}
                 onClick={this.onClickFilter}
               >
-                started
+                Starred
               </button>
             </div>
             <ul className="appointments-list">

@@ -3,7 +3,7 @@
 import './index.css'
 
 const AppointmentItem = props => {
-  const {appointmentDetails, toggleIsStarted} = props
+  const {appointmentDetails, toggleIsStarred} = props
   const {id, title, date, isStarted} = appointmentDetails
 
   const startImgUrl = isStarted
@@ -22,7 +22,7 @@ const AppointmentItem = props => {
           type="button"
           data-testid="star"
           className="star-button"
-          onClick={onClickStar}
+          onClick={onClickStart}
         >
           <img src={startImgUrl} className="star" alt="star" />
         </button>
